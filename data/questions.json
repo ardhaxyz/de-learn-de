@@ -1,0 +1,1122 @@
+[
+  {
+    "id": 1,
+    "category": "listening",
+    "difficulty": "easy",
+    "question": "Hören Sie: 'Hallo, ich heiße Markus.' Wie ist sein Name?",
+    "options": [
+      "Markus",
+      "Marius",
+      "Martin",
+      "Mario"
+    ],
+    "correctAnswer": "Markus",
+    "explanation": "The person introduces himself as Markus."
+  },
+  {
+    "id": 2,
+    "category": "listening",
+    "difficulty": "easy",
+    "question": "Hören Sie: 'Ich komme aus Berlin.' Woher kommt er?",
+    "options": [
+      "München",
+      "Hamburg",
+      "Berlin",
+      "Wien"
+    ],
+    "correctAnswer": "Berlin",
+    "explanation": "'Berlin' is clearly stated as the origin."
+  },
+  {
+    "id": 3,
+    "category": "listening",
+    "difficulty": "easy",
+    "question": "Hören Sie: 'Wie geht es dir?' Was bedeutet das?",
+    "options": [
+      "How are you?",
+      "Where are you?",
+      "Who are you?",
+      "What is that?"
+    ],
+    "correctAnswer": "How are you?",
+    "explanation": "'Wie geht es dir?' is the standard way to ask 'How are you?'"
+  },
+  {
+    "id": 4,
+    "category": "listening",
+    "difficulty": "easy",
+    "question": "Hören Sie: 'Zwei Kaffee, bitte.' Was bestellt die Person?",
+    "options": [
+      "Two teas",
+      "Two coffees",
+      "Two waters",
+      "Two juices"
+    ],
+    "correctAnswer": "Two coffees",
+    "explanation": "'Zwei Kaffee' means two coffees."
+  },
+  {
+    "id": 5,
+    "category": "listening",
+    "difficulty": "easy",
+    "question": "Hören Sie: 'Es ist acht Uhr.' Wie spät ist es?",
+    "options": [
+      "7:00",
+      "8:00",
+      "9:00",
+      "10:00"
+    ],
+    "correctAnswer": "8:00",
+    "explanation": "'Acht Uhr' means 8:00."
+  },
+  {
+    "id": 6,
+    "category": "listening",
+    "difficulty": "easy",
+    "question": "Hören Sie: 'Ich bin vierundzwanzig Jahre alt.' Wie alt ist er?",
+    "options": [
+      "14",
+      "24",
+      "34",
+      "42"
+    ],
+    "correctAnswer": "24",
+    "explanation": "'Vierundzwanzig' is 24."
+  },
+  {
+    "id": 7,
+    "category": "listening",
+    "difficulty": "easy",
+    "question": "Hören Sie: 'Die Milch kostet einen Euro.' Wie viel kostet die Milch?",
+    "options": [
+      "0.50 €",
+      "1.00 €",
+      "1.50 €",
+      "2.00 €"
+    ],
+    "correctAnswer": "1.00 €",
+    "explanation": "'Einen Euro' means 1.00 €."
+  },
+  {
+    "id": 8,
+    "category": "listening",
+    "difficulty": "easy",
+    "question": "Hören Sie: 'Ich habe zwei Schwestern.' Wie viele Geschwister hat er?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correctAnswer": "2",
+    "explanation": "'Zwei Schwestern' means two sisters."
+  },
+  {
+    "id": 9,
+    "category": "listening",
+    "difficulty": "easy",
+    "question": "Hören Sie: 'Wir gehen ins Kino.' Wohin gehen sie?",
+    "options": [
+      "Park",
+      "Kino",
+      "Restaurant",
+      "Schule"
+    ],
+    "correctAnswer": "Kino",
+    "explanation": "'Kino' means cinema."
+  },
+  {
+    "id": 10,
+    "category": "listening",
+    "difficulty": "easy",
+    "question": "Hören Sie: 'Mein Hobby ist Schwimmen.' Was macht er gern?",
+    "options": [
+      "Laufen",
+      "Lesen",
+      "Schwimmen",
+      "Singen"
+    ],
+    "correctAnswer": "Schwimmen",
+    "explanation": "'Schwimmen' means swimming."
+  },
+  {
+    "id": 11,
+    "category": "listening",
+    "difficulty": "medium",
+    "question": "Hören Sie: 'Können Sie das bitte wiederholen?' Was möchte die Person?",
+    "options": [
+      "A repeat",
+      "A drink",
+      "A bill",
+      "A map"
+    ],
+    "correctAnswer": "A repeat",
+    "explanation": "'Wiederholen' means to repeat."
+  },
+  {
+    "id": 12,
+    "category": "listening",
+    "difficulty": "medium",
+    "question": "Hören Sie: 'Ich möchte ein Schnitzel mit Pommes.' Was isst die Person?",
+    "options": [
+      "Pizza",
+      "Schnitzel",
+      "Salat",
+      "Suppe"
+    ],
+    "correctAnswer": "Schnitzel",
+    "explanation": "The person ordered 'Schnitzel'."
+  },
+  {
+    "id": 13,
+    "category": "listening",
+    "difficulty": "medium",
+    "question": "Hören Sie: 'Der Zug kommt um 14:30 Uhr an.' Wann kommt der Zug?",
+    "options": [
+      "14:00",
+      "14:15",
+      "14:30",
+      "14:45"
+    ],
+    "correctAnswer": "14:30",
+    "explanation": "'Vierzehn Uhr dreißig' is 14:30."
+  },
+  {
+    "id": 14,
+    "category": "listening",
+    "difficulty": "medium",
+    "question": "Hören Sie: 'Ich arbeite als Lehrer.' Was ist sein Beruf?",
+    "options": [
+      "Arzt",
+      "Lehrer",
+      "Koch",
+      "Kellner"
+    ],
+    "correctAnswer": "Lehrer",
+    "explanation": "'Lehrer' means teacher."
+  },
+  {
+    "id": 15,
+    "category": "listening",
+    "difficulty": "medium",
+    "question": "Hören Sie: 'Die Apotheke ist links.' Wo ist die Apotheke?",
+    "options": [
+      "Rechts",
+      "Links",
+      "Geradeaus",
+      "Hinter dem Haus"
+    ],
+    "correctAnswer": "Links",
+    "explanation": "'Links' means left."
+  },
+  {
+    "id": 16,
+    "category": "listening",
+    "difficulty": "hard",
+    "question": "Hören Sie: 'Ich habe Kopfschmerzen.' Was hat die Person?",
+    "options": [
+      "Stomach ache",
+      "Headache",
+      "Back ache",
+      "Tooth ache"
+    ],
+    "correctAnswer": "Headache",
+    "explanation": "'Kopf' means head, 'Schmerzen' means pain/ache."
+  },
+  {
+    "id": 17,
+    "category": "listening",
+    "difficulty": "hard",
+    "question": "Hören Sie: 'Wir treffen uns am Samstag.' Wann treffen sie sich?",
+    "options": [
+      "Freitag",
+      "Samstag",
+      "Sonntag",
+      "Montag"
+    ],
+    "correctAnswer": "Samstag",
+    "explanation": "'Samstag' is Saturday."
+  },
+  {
+    "id": 18,
+    "category": "listening",
+    "difficulty": "hard",
+    "question": "Hören Sie: 'Das Wetter ist heute sonnig.' Wie ist das Wetter?",
+    "options": [
+      "Kalt",
+      "Regnerisch",
+      "Sonnig",
+      "Windig"
+    ],
+    "correctAnswer": "Sonnig",
+    "explanation": "'Sonnig' means sunny."
+  },
+  {
+    "id": 19,
+    "category": "listening",
+    "difficulty": "hard",
+    "question": "Hören Sie: 'Ich trage einen blauen Pullover.' Welche Farbe hat der Pullover?",
+    "options": [
+      "Rot",
+      "Gelb",
+      "Grün",
+      "Blau"
+    ],
+    "correctAnswer": "Blau",
+    "explanation": "'Blau' means blue."
+  },
+  {
+    "id": 20,
+    "category": "listening",
+    "difficulty": "hard",
+    "question": "Hören Sie: 'Entschuldigung, wie komme ich zum Bahnhof?' Was sucht die Person?",
+    "options": [
+      "Flughafen",
+      "Bahnhof",
+      "Supermarkt",
+      "Hotel"
+    ],
+    "correctAnswer": "Bahnhof",
+    "explanation": "'Bahnhof' means train station."
+  },
+  {
+    "id": 21,
+    "category": "reading",
+    "difficulty": "easy",
+    "question": "Lesen Sie: 'Bäckerei Schmidt - Geöffnet 07:00 bis 18:00'. Wann schließt die Bäckerei?",
+    "options": [
+      "07:00",
+      "12:00",
+      "18:00",
+      "20:00"
+    ],
+    "correctAnswer": "18:00",
+    "explanation": "'Bis 18:00' means until 18:00 (closing time)."
+  },
+  {
+    "id": 22,
+    "category": "reading",
+    "difficulty": "easy",
+    "question": "Ein Schild sagt: 'Eingang'. Was bedeutet das?",
+    "options": [
+      "Exit",
+      "Entrance",
+      "Open",
+      "Closed"
+    ],
+    "correctAnswer": "Entrance",
+    "explanation": "'Eingang' means entrance."
+  },
+  {
+    "id": 23,
+    "category": "reading",
+    "difficulty": "easy",
+    "question": "In einer E-Mail steht: 'Liebe Maria, alles Gute zum Geburtstag!' Warum schreibt die Person?",
+    "options": [
+      "To invite her",
+      "To thank her",
+      "To congratulate her",
+      "To say goodbye"
+    ],
+    "correctAnswer": "To congratulate her",
+    "explanation": "'Alles Gute zum Geburtstag' is a birthday wish."
+  },
+  {
+    "id": 24,
+    "category": "reading",
+    "difficulty": "easy",
+    "question": "Auf der Speisekarte: 'Tagessuppe: Tomatensuppe 3,50 €'. Was ist die Suppe des Tages?",
+    "options": [
+      "Kartoffelsuppe",
+      "Tomatensuppe",
+      "Zwiebelsuppe",
+      "Fischsuppe"
+    ],
+    "correctAnswer": "Tomatensuppe",
+    "explanation": "The text says 'Tomatensuppe'."
+  },
+  {
+    "id": 25,
+    "category": "reading",
+    "difficulty": "easy",
+    "question": "Lesen Sie: 'Nicht rauchen!' Wo darf man das nicht?",
+    "options": [
+      "Eat",
+      "Smoke",
+      "Run",
+      "Talk"
+    ],
+    "correctAnswer": "Smoke",
+    "explanation": "'Rauchen' means to smoke; 'Nicht rauchen' means no smoking."
+  },
+  {
+    "id": 26,
+    "category": "reading",
+    "difficulty": "easy",
+    "question": "Ein Schild im Zug: 'Reserviert'. Was bedeutet das?",
+    "options": [
+      "Free",
+      "Occupied/Reserved",
+      "Broken",
+      "Cleaning"
+    ],
+    "correctAnswer": "Occupied/Reserved",
+    "explanation": "'Reserviert' means reserved."
+  },
+  {
+    "id": 27,
+    "category": "reading",
+    "difficulty": "easy",
+    "question": "In der Zeitung: 'Wetter morgen: 20 Grad, Regen'. Wie wird das Wetter?",
+    "options": [
+      "Heiß und trocken",
+      "Kalt und Schnee",
+      "20 Grad und Regen",
+      "Sonnig"
+    ],
+    "correctAnswer": "20 Grad und Regen",
+    "explanation": "The text states '20 Grad, Regen'."
+  },
+  {
+    "id": 28,
+    "category": "reading",
+    "difficulty": "easy",
+    "question": "Eine SMS: 'Bin im Supermarkt. Brauchst du Brot?' Was möchte die Person wissen?",
+    "options": [
+      "If you need milk",
+      "If you need bread",
+      "If you are at home",
+      "If you are hungry"
+    ],
+    "correctAnswer": "If you need bread",
+    "explanation": "'Brot' means bread."
+  },
+  {
+    "id": 29,
+    "category": "reading",
+    "difficulty": "easy",
+    "question": "Schild: 'Privat'. Darf man hier eintreten?",
+    "options": [
+      "Ja, immer",
+      "Ja, für Gäste",
+      "Nein, es ist privat",
+      "Nur am Montag"
+    ],
+    "correctAnswer": "Nein, es ist privat",
+    "explanation": "'Privat' means private."
+  },
+  {
+    "id": 30,
+    "category": "reading",
+    "difficulty": "easy",
+    "question": "Notiz: 'Milch ist im Kühlschrank'. Wo ist die Milch?",
+    "options": [
+      "Auf dem Tisch",
+      "Im Schrank",
+      "Im Kühlschrank",
+      "Im Supermarkt"
+    ],
+    "correctAnswer": "Im Kühlschrank",
+    "explanation": "'Kühlschrank' means refrigerator."
+  },
+  {
+    "id": 31,
+    "category": "reading",
+    "difficulty": "medium",
+    "question": "Anzeige: 'Zimmer frei ab 1. Mai, 400 Euro'. Ab wann ist das Zimmer frei?",
+    "options": [
+      "April",
+      "Mai",
+      "Juni",
+      "Juli"
+    ],
+    "correctAnswer": "Mai",
+    "explanation": "The ad says 'ab 1. Mai'."
+  },
+  {
+    "id": 32,
+    "category": "reading",
+    "difficulty": "medium",
+    "question": "Fahrplan: 'S1 nach Hauptbahnhof - Gleis 4'. Von welchem Gleis fährt der Zug?",
+    "options": [
+      "Gleis 1",
+      "Gleis 2",
+      "Gleis 3",
+      "Gleis 4"
+    ],
+    "correctAnswer": "Gleis 4",
+    "explanation": "The text says 'Gleis 4'."
+  },
+  {
+    "id": 33,
+    "category": "reading",
+    "difficulty": "medium",
+    "question": "Lesen Sie: 'Bitte an der Kasse bezahlen'. Wo bezahlt man?",
+    "options": [
+      "At the door",
+      "At the register",
+      "At the table",
+      "In the office"
+    ],
+    "correctAnswer": "At the register",
+    "explanation": "'Kasse' means cash register."
+  },
+  {
+    "id": 34,
+    "category": "reading",
+    "difficulty": "medium",
+    "question": "Ein Formular fragt nach 'Familienname'. Was müssen Sie schreiben?",
+    "options": [
+      "First name",
+      "Last name",
+      "Birth date",
+      "Address"
+    ],
+    "correctAnswer": "Last name",
+    "explanation": "'Familienname' is the surname/last name."
+  },
+  {
+    "id": 35,
+    "category": "reading",
+    "difficulty": "medium",
+    "question": "E-Mail: 'Der Kurs beginnt am Montag um 10:00 Uhr'. Wann ist der Kurs?",
+    "options": [
+      "Montag, 10:00",
+      "Dienstag, 10:00",
+      "Mittwoch, 10:00",
+      "Montag, 11:00"
+    ],
+    "correctAnswer": "Montag, 10:00",
+    "explanation": "The email states 'Montag um 10:00'."
+  },
+  {
+    "id": 36,
+    "category": "reading",
+    "difficulty": "hard",
+    "question": "Anzeige: 'Suche Hilfe im Garten (Samstags)'. Wann wird Hilfe gesucht?",
+    "options": [
+      "Every day",
+      "Sundays",
+      "Saturdays",
+      "Mornings"
+    ],
+    "correctAnswer": "Saturdays",
+    "explanation": "'Samstags' means every Saturday."
+  },
+  {
+    "id": 37,
+    "category": "reading",
+    "difficulty": "hard",
+    "question": "Schild: 'Drücken'. Was soll man mit der Tür machen?",
+    "options": [
+      "Pull",
+      "Push",
+      "Lock",
+      "Open"
+    ],
+    "correctAnswer": "Push",
+    "explanation": "'Drücken' means to push (a door)."
+  },
+  {
+    "id": 38,
+    "category": "reading",
+    "difficulty": "hard",
+    "question": "Lesen Sie: 'Kein Trinkwasser'. Darf man das Wasser trinken?",
+    "options": [
+      "Ja",
+      "Nein",
+      "Nur kochen",
+      "Nur für Hunde"
+    ],
+    "correctAnswer": "Nein",
+    "explanation": "'Kein Trinkwasser' means not drinking water."
+  },
+  {
+    "id": 39,
+    "category": "reading",
+    "difficulty": "hard",
+    "question": "Notiz: 'Treffen im Cafe Central um 15 Uhr'. Wo treffen sie sich?",
+    "options": [
+      "Cafe Central",
+      "Hauptbahnhof",
+      "Park",
+      "Bäckerei"
+    ],
+    "correctAnswer": "Cafe Central",
+    "explanation": "The location is 'Cafe Central'."
+  },
+  {
+    "id": 40,
+    "category": "reading",
+    "difficulty": "hard",
+    "question": "Anzeige: 'Gebrauchtes Fahrrad zu verkaufen, 50 Euro'. Was wird verkauft?",
+    "options": [
+      "A car",
+      "A book",
+      "A bicycle",
+      "A phone"
+    ],
+    "correctAnswer": "A bicycle",
+    "explanation": "'Fahrrad' means bicycle."
+  },
+  {
+    "id": 41,
+    "category": "writing",
+    "difficulty": "easy",
+    "question": "Welches Wort passt? 'Ich ___ aus Italien.'",
+    "options": [
+      "bin",
+      "bist",
+      "ist",
+      "sind"
+    ],
+    "correctAnswer": "bin",
+    "explanation": "The verb 'sein' for 'ich' is 'bin'."
+  },
+  {
+    "id": 42,
+    "category": "writing",
+    "difficulty": "easy",
+    "question": "Wie fragt man nach dem Namen?",
+    "options": [
+      "Wie heißt du?",
+      "Wo bist du?",
+      "Was ist das?",
+      "Wie alt bist du?"
+    ],
+    "correctAnswer": "Wie heißt du?",
+    "explanation": "'Wie heißt du?' means 'What is your name?'"
+  },
+  {
+    "id": 43,
+    "category": "writing",
+    "difficulty": "easy",
+    "question": "Ergänzen Sie: 'Das ist ___ Auto (n).'",
+    "options": [
+      "ein",
+      "eine",
+      "einer",
+      "eines"
+    ],
+    "correctAnswer": "ein",
+    "explanation": "'Auto' is neuter (das), so the indefinite article is 'ein'."
+  },
+  {
+    "id": 44,
+    "category": "writing",
+    "difficulty": "easy",
+    "question": "Ergänzen Sie: 'Wo ___ du?'",
+    "options": [
+      "wohnt",
+      "wohnst",
+      "wohnen",
+      "wohne"
+    ],
+    "correctAnswer": "wohnst",
+    "explanation": "The verb 'wohnen' for 'du' ends in '-st'."
+  },
+  {
+    "id": 45,
+    "category": "writing",
+    "difficulty": "easy",
+    "question": "Was ist korrekt? 'Sie (plural) ___ Deutsch.'",
+    "options": [
+      "lernt",
+      "lernst",
+      "lernen",
+      "lerne"
+    ],
+    "correctAnswer": "lernen",
+    "explanation": "The plural 'sie' (they) takes the ending '-en'."
+  },
+  {
+    "id": 46,
+    "category": "writing",
+    "difficulty": "easy",
+    "question": "Wie schreibt man 'Good morning' auf Deutsch?",
+    "options": [
+      "Guten Tag",
+      "Guten Morgen",
+      "Gute Nacht",
+      "Guten Abend"
+    ],
+    "correctAnswer": "Guten Morgen",
+    "explanation": "'Guten Morgen' is Good morning."
+  },
+  {
+    "id": 47,
+    "category": "writing",
+    "difficulty": "easy",
+    "question": "Ergänzen Sie: 'Ich habe ___ Hunger.'",
+    "options": [
+      "kein",
+      "keine",
+      "keinen",
+      "nicht"
+    ],
+    "correctAnswer": "keinen",
+    "explanation": "'Hunger' is masculine (der), and here it is accusative: 'keinen Hunger'."
+  },
+  {
+    "id": 48,
+    "category": "writing",
+    "difficulty": "easy",
+    "question": "Welches Wort ist richtig? 'Das ist ___ Frau (f).'",
+    "options": [
+      "mein",
+      "meine",
+      "meinen",
+      "meines"
+    ],
+    "correctAnswer": "meine",
+    "explanation": "'Frau' is feminine, so it takes 'meine'."
+  },
+  {
+    "id": 49,
+    "category": "writing",
+    "difficulty": "easy",
+    "question": "Wie sagt man 'Thank you'?",
+    "options": [
+      "Bitte",
+      "Danke",
+      "Entschuldigung",
+      "Hallo"
+    ],
+    "correctAnswer": "Danke",
+    "explanation": "'Danke' means thank you."
+  },
+  {
+    "id": 50,
+    "category": "writing",
+    "difficulty": "easy",
+    "question": "Welcher Artikel passt zu 'Tisch'?",
+    "options": [
+      "der",
+      "die",
+      "das",
+      "die (pl)"
+    ],
+    "correctAnswer": "der",
+    "explanation": "'Tisch' is masculine: der Tisch."
+  },
+  {
+    "id": 51,
+    "category": "writing",
+    "difficulty": "medium",
+    "question": "Satzbau: 'Ich / heute / arbeite'. Was ist korrekt?",
+    "options": [
+      "Heute ich arbeite.",
+      "Ich arbeite heute.",
+      "Arbeite ich heute.",
+      "Ich heute arbeite."
+    ],
+    "correctAnswer": "Ich arbeite heute.",
+    "explanation": "The verb usually takes the second position in a statement."
+  },
+  {
+    "id": 52,
+    "category": "writing",
+    "difficulty": "medium",
+    "question": "Negation: 'Ich trinke ___ Kaffee.'",
+    "options": [
+      "kein",
+      "keine",
+      "keinen",
+      "nicht"
+    ],
+    "correctAnswer": "keinen",
+    "explanation": "'Kaffee' is masculine accusative: 'keinen Kaffee'."
+  },
+  {
+    "id": 53,
+    "category": "writing",
+    "difficulty": "medium",
+    "question": "Frage: '___ ist das?' - 'Das ist mein Freund.'",
+    "options": [
+      "Wer",
+      "Was",
+      "Wo",
+      "Wie"
+    ],
+    "correctAnswer": "Wer",
+    "explanation": "'Wer' asks about people (Who)."
+  },
+  {
+    "id": 54,
+    "category": "writing",
+    "difficulty": "medium",
+    "question": "Plural: 'Das Buch' -> 'Die ___'.",
+    "options": [
+      "Bücher",
+      "Buchen",
+      "Buchs",
+      "Buche"
+    ],
+    "correctAnswer": "Bücher",
+    "explanation": "The plural of 'Buch' is 'Bücher'."
+  },
+  {
+    "id": 55,
+    "category": "writing",
+    "difficulty": "medium",
+    "question": "Modalverb: 'Ich ___ gut schwimmen.'",
+    "options": [
+      "kann",
+      "kannst",
+      "können",
+      "könnt"
+    ],
+    "correctAnswer": "kann",
+    "explanation": "The modal verb 'können' for 'ich' is 'kann'."
+  },
+  {
+    "id": 56,
+    "category": "writing",
+    "difficulty": "hard",
+    "question": "Präposition: 'Ich wohne ___ Berlin.'",
+    "options": [
+      "in",
+      "an",
+      "auf",
+      "nach"
+    ],
+    "correctAnswer": "in",
+    "explanation": "We use 'in' for cities."
+  },
+  {
+    "id": 57,
+    "category": "writing",
+    "difficulty": "hard",
+    "question": "Personalpronomen: 'Das ist Peter. ___ kommt aus Wien.'",
+    "options": [
+      "Er",
+      "Sie",
+      "Es",
+      "Wir"
+    ],
+    "correctAnswer": "Er",
+    "explanation": "Peter is male, so we use 'Er' (he)."
+  },
+  {
+    "id": 58,
+    "category": "writing",
+    "difficulty": "hard",
+    "question": "Possessivartikel: 'Hast du ___ Handy (n)?'",
+    "options": [
+      "dein",
+      "deine",
+      "deinen",
+      "deines"
+    ],
+    "correctAnswer": "dein",
+    "explanation": "'Handy' is neuter (das), so it is 'dein Handy'."
+  },
+  {
+    "id": 59,
+    "category": "writing",
+    "difficulty": "hard",
+    "question": "Verbform: 'Wir ___ heute Pizza.'",
+    "options": [
+      "essen",
+      "esst",
+      "isst",
+      "esse"
+    ],
+    "correctAnswer": "essen",
+    "explanation": "The ending for 'wir' is '-en'."
+  },
+  {
+    "id": 60,
+    "category": "writing",
+    "difficulty": "hard",
+    "question": "Gegenteil: Was ist das Gegenteil von 'groß'?",
+    "options": [
+      "klein",
+      "alt",
+      "schön",
+      "lang"
+    ],
+    "correctAnswer": "klein",
+    "explanation": "'Klein' (small) is the opposite of 'groß' (big)."
+  },
+  {
+    "id": 61,
+    "category": "speaking",
+    "difficulty": "easy",
+    "question": "Situation: You meet someone at 3 PM. What do you say?",
+    "options": [
+      "Guten Morgen",
+      "Guten Tag",
+      "Gute Nacht",
+      "Tschüss"
+    ],
+    "correctAnswer": "Guten Tag",
+    "explanation": "Guten Tag is used during the day (after morning)."
+  },
+  {
+    "id": 62,
+    "category": "speaking",
+    "difficulty": "easy",
+    "question": "Situation: You want to order a tea. What do you say?",
+    "options": [
+      "Ein Tee, bitte.",
+      "Wie heißt das?",
+      "Wo ist der Tee?",
+      "Ich habe Hunger."
+    ],
+    "correctAnswer": "Ein Tee, bitte.",
+    "explanation": "'Ein Tee, bitte' is a polite way to order."
+  },
+  {
+    "id": 63,
+    "category": "speaking",
+    "difficulty": "easy",
+    "question": "Situation: Someone says 'Danke'. What is the best response?",
+    "options": [
+      "Hallo",
+      "Bitte/Gern geschehen",
+      "Entschuldigung",
+      "Auf Wiedersehen"
+    ],
+    "correctAnswer": "Bitte/Gern geschehen",
+    "explanation": "The standard response to 'Danke' is 'Bitte'."
+  },
+  {
+    "id": 64,
+    "category": "speaking",
+    "difficulty": "easy",
+    "question": "Situation: You want to know the price of a shirt. What do you ask?",
+    "options": [
+      "Was kostet das?",
+      "Wie heißt du?",
+      "Wo wohnst du?",
+      "Was ist das?"
+    ],
+    "correctAnswer": "Was kostet das?",
+    "explanation": "'Was kostet das?' means 'How much does it cost?'"
+  },
+  {
+    "id": 65,
+    "category": "speaking",
+    "difficulty": "easy",
+    "question": "Situation: You are leaving a shop. What do you say?",
+    "options": [
+      "Hallo",
+      "Auf Wiedersehen",
+      "Entschuldigung",
+      "Willkommen"
+    ],
+    "correctAnswer": "Auf Wiedersehen",
+    "explanation": "'Auf Wiedersehen' means 'Goodbye'."
+  },
+  {
+    "id": 66,
+    "category": "speaking",
+    "difficulty": "easy",
+    "question": "Situation: You didn't understand. What do you say?",
+    "options": [
+      "Wie bitte?",
+      "Danke",
+      "Ja, bitte",
+      "Hallo"
+    ],
+    "correctAnswer": "Wie bitte?",
+    "explanation": "'Wie bitte?' means 'Pardon?' or 'Could you repeat that?'"
+  },
+  {
+    "id": 67,
+    "category": "speaking",
+    "difficulty": "easy",
+    "question": "Situation: You want to ask for the way to the park. What do you ask?",
+    "options": [
+      "Wo ist der Park?",
+      "Wer ist im Park?",
+      "Wie ist der Park?",
+      "Wann ist der Park?"
+    ],
+    "correctAnswer": "Wo ist der Park?",
+    "explanation": "'Wo' asks about the location."
+  },
+  {
+    "id": 68,
+    "category": "speaking",
+    "difficulty": "easy",
+    "question": "Situation: You are late. What do you say?",
+    "options": [
+      "Es tut mir leid.",
+      "Guten Tag.",
+      "Wie geht's?",
+      "Danke."
+    ],
+    "correctAnswer": "Es tut mir leid.",
+    "explanation": "'Es tut mir leid' means 'I am sorry'."
+  },
+  {
+    "id": 69,
+    "category": "speaking",
+    "difficulty": "easy",
+    "question": "Situation: You want to introduce your friend Peter. What do you say?",
+    "options": [
+      "Das ist Peter.",
+      "Ich bin Peter.",
+      "Er heißt Peter?",
+      "Peter ist hier."
+    ],
+    "correctAnswer": "Das ist Peter.",
+    "explanation": "'Das ist...' is used for introductions."
+  },
+  {
+    "id": 70,
+    "category": "speaking",
+    "difficulty": "easy",
+    "question": "Situation: You want to know where someone is from. What do you ask?",
+    "options": [
+      "Woher kommst du?",
+      "Wohin gehst du?",
+      "Wo wohnst du?",
+      "Wie heißt du?"
+    ],
+    "correctAnswer": "Woher kommst du?",
+    "explanation": "'Woher' asks about origin."
+  },
+  {
+    "id": 71,
+    "category": "speaking",
+    "difficulty": "medium",
+    "question": "Situation: You want to pay in a restaurant. What do you say?",
+    "options": [
+      "Zahlen, bitte.",
+      "Essen, bitte.",
+      "Trinken, bitte.",
+      "Gehen, bitte."
+    ],
+    "correctAnswer": "Zahlen, bitte.",
+    "explanation": "'Zahlen, bitte' means 'The bill, please'."
+  },
+  {
+    "id": 72,
+    "category": "speaking",
+    "difficulty": "medium",
+    "question": "Situation: You want to know the time. What do you ask?",
+    "options": [
+      "Wie spät ist es?",
+      "Wann ist es?",
+      "Wie viel Uhr hast du?",
+      "Was ist die Zeit?"
+    ],
+    "correctAnswer": "Wie spät ist es?",
+    "explanation": "Standard way to ask the time."
+  },
+  {
+    "id": 73,
+    "category": "speaking",
+    "difficulty": "medium",
+    "question": "Situation: You are introduce yourself in a formal way. What do you say?",
+    "options": [
+      "Mein Name ist ...",
+      "Ich bin der ...",
+      "Hallo, ich!",
+      "Name ist ..."
+    ],
+    "correctAnswer": "Mein Name ist ...",
+    "explanation": "'Mein Name ist...' is a formal/standard introduction."
+  },
+  {
+    "id": 74,
+    "category": "speaking",
+    "difficulty": "medium",
+    "question": "Situation: You want to ask if a seat is free. What do you ask?",
+    "options": [
+      "Ist hier noch frei?",
+      "Wo ist der Stuhl?",
+      "Wer sitzt hier?",
+      "Kann ich sitzen?"
+    ],
+    "correctAnswer": "Ist hier noch frei?",
+    "explanation": "Standard phrase for asking if a seat is available."
+  },
+  {
+    "id": 75,
+    "category": "speaking",
+    "difficulty": "medium",
+    "question": "Situation: Someone asks 'Wie geht es Ihnen?'. What is a good response?",
+    "options": [
+      "Gut, danke.",
+      "Ich bin Peter.",
+      "Aus Deutschland.",
+      "Bitte."
+    ],
+    "correctAnswer": "Gut, danke.",
+    "explanation": "'Gut, danke' is a common reply to 'How are you?'"
+  },
+  {
+    "id": 76,
+    "category": "speaking",
+    "difficulty": "hard",
+    "question": "Situation: You want to ask about someone's hobby. What do you ask?",
+    "options": [
+      "Was sind deine Hobbys?",
+      "Was arbeitest du?",
+      "Wo wohnst du?",
+      "Wer bist du?"
+    ],
+    "correctAnswer": "Was sind deine Hobbys?",
+    "explanation": "Asking about hobbies."
+  },
+  {
+    "id": 77,
+    "category": "speaking",
+    "difficulty": "hard",
+    "question": "Situation: You want to ask if someone speaks English. What do you ask?",
+    "options": [
+      "Sprechen Sie Englisch?",
+      "Sind Sie Englisch?",
+      "Haben Sie Englisch?",
+      "Wie ist Englisch?"
+    ],
+    "correctAnswer": "Sprechen Sie Englisch?",
+    "explanation": "Using 'sprechen' for languages."
+  },
+  {
+    "id": 78,
+    "category": "speaking",
+    "difficulty": "hard",
+    "question": "Situation: You are in a bakery and want 3 bread rolls (Brötchen). What do you say?",
+    "options": [
+      "Drei Brötchen, bitte.",
+      "Drei Brot, bitte.",
+      "Ich möchte essen.",
+      "Haben Sie Brot?"
+    ],
+    "correctAnswer": "Drei Brötchen, bitte.",
+    "explanation": "Ordering specific items."
+  },
+  {
+    "id": 79,
+    "category": "speaking",
+    "difficulty": "hard",
+    "question": "Situation: You want to ask where the toilet is. What do you ask?",
+    "options": [
+      "Wo ist die Toilette?",
+      "Was ist die Toilette?",
+      "Haben Sie eine Toilette?",
+      "Wo sind Sie?"
+    ],
+    "correctAnswer": "Wo ist die Toilette?",
+    "explanation": "Asking for the location of the restroom."
+  },
+  {
+    "id": 80,
+    "category": "speaking",
+    "difficulty": "hard",
+    "question": "Situation: You meet someone for the first time. What polite phrase do you use?",
+    "options": [
+      "Freut mich.",
+      "Wie bitte?",
+      "Guten Abend.",
+      "Danke."
+    ],
+    "correctAnswer": "Freut mich.",
+    "explanation": "'Freut mich' means 'Pleased to meet you'."
+  }
+]
