@@ -11,7 +11,7 @@ interface HeartsIndicatorProps {
 
 export default function HeartsIndicator({
   hearts,
-  maxHearts = 3,
+  maxHearts = 5,
   size = "md",
   showText = false,
 }: HeartsIndicatorProps) {
