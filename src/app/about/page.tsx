@@ -42,6 +42,39 @@ export default function AboutPage() {
           </p>
         </div>
 
+        {/* Special Credit for Ine Maria */}
+        <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-3xl p-6 shadow-lg mb-6 border-2 border-pink-200">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 rounded-full bg-pink-500/20 flex items-center justify-center">
+              <Heart className="w-5 h-5 text-pink-600 fill-pink-600" />
+            </div>
+            <h2 className="text-lg font-bold text-pink-700">Dedicasi Khusus 💕</h2>
+          </div>
+          
+          <div className="text-gray-700 leading-relaxed space-y-3">
+            <p>
+              Aplikasi ini pertama kali dibuat sebagai hadiah cinta untuk istri tercinta:
+            </p>
+            
+            <div className="text-center py-4">
+              <p className="text-2xl font-bold text-pink-600">
+                Ine Maria
+              </p>
+              <p className="text-sm text-pink-500 mt-1">
+                Istriku, inspirasiku, semangatku
+              </p>
+            </div>
+            
+            <p className="text-center italic text-pink-600/80">
+              &ldquo;Terima kasih sudah menjadi alasan kenapa aku harus terus belajar dan berkarya.&rdquo;
+            </p>
+            
+            <p className="text-sm text-gray-500 pt-2">
+              Kepada Ine Maria dan semua istri hebat di luar sana yang men-support mimpi suaminya. Semoga kita bisa segera bersama di Jerman. 🇩🇪
+            </p>
+          </div>
+        </div>
+
         {/* Why This Was Made */}
         <div className="bg-white rounded-3xl p-6 shadow-lg mb-6">
           <div className="flex items-center gap-3 mb-4">
