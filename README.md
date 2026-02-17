@@ -14,10 +14,14 @@ Ine Maria's German A1 course dashboard. A 14-day interactive course that's mobil
 
 ## ✨ Features
 
-- **14-Day A1 Curriculum** - Daily sessions: Hören (Listening), Lesen (Reading), Schreiben (Writing), Sprechen (Speaking)
-- **Progress Locked** - Must finish all 4 sessions today before tomorrow unlocks
+- **14-Day A1 Curriculum** - Daily quiz sessions: Hören (Listening) & Lesen (Reading)
+- **Interactive Quiz System** - 5 questions per session, one-by-one navigation, instant feedback
+- **Hearts System** - 3 lives per day, lose 1 on failure, can use tomorrow's hearts
+- **Text-to-Speech** - German audio for listening exercises using browser TTS
+- **Progressive Difficulty** - Easy (Days 1-4) → Medium (Days 5-8) → Hard (Days 9-14)
+- **Progress Locked** - Must finish Hören before Lesen unlocks, complete both for next day
 - **Streak Counter** - Tracks consecutive learning days
-- **80 A1 Questions** - Question bank randomly generates new quizzes
+- **80 A1 Questions** - Question bank with random selection and replacement
 - **Mobile-First Design** - Optimized for Ine's phone
 - **Progress Saved** - Automatically saved to browser (won't lose progress on refresh)
 
@@ -72,9 +76,24 @@ vercel
 
 1. **Open the link** - Ine opens the website on her phone
 2. **Pick Day 1** - Always unlocked
-3. **Complete 4 Sessions** - Hören, Lesen, Schreiben, Sprechen
-4. **Auto-Progress** - Once all green, tomorrow automatically unlocks
-5. **Continue Now** - No need to refresh or send messages
+3. **Check Hearts** - You have 3 ❤️ per day
+4. **Start Hören** - Click to begin listening quiz (5 questions, TTS audio)
+5. **Answer Questions** - One-by-one navigation, choose from 4 options
+6. **Submit** - After answering all 5 questions
+7. **Results** - Need ≥4 correct (80%) to pass:
+   - **Pass**: Proceed to Lesen session
+   - **Fail**: Lose 1 ❤️, retry with new random questions (if ❤️ > 0)
+8. **Out of Hearts?** - Use "Gunakan ❤️ Besok" to borrow from tomorrow
+9. **Complete Lesen** - Same process for reading quiz
+10. **Auto-Progress** - Complete both sessions to unlock tomorrow
+
+### Quiz Rules
+- **Threshold**: Minimum 4/5 correct answers (80%) to pass
+- **Random Questions**: Different questions each attempt (with replacement)
+- **Difficulty Progression**:
+  - Days 1-4: Easy
+  - Days 5-8: Medium
+  - Days 9-14: Hard
 
 ---
 
@@ -90,6 +109,33 @@ vercel
 
 ---
 
+## 🎮 Quiz System
+
+### Sessions
+- **Hören (Listening)**: 5 questions with Text-to-Speech audio
+- **Lesen (Reading)**: 5 text-based questions
+
+### Hearts System
+- Start each day with **3 ❤️**
+- Lose **1 ❤️** when failing a quiz (>2 wrong answers)
+- **❤️ = 0**: Cannot attempt more quizzes today
+- **Borrow Hearts**: Use "Gunakan ❤️ Besok" to borrow from tomorrow (tomorrow starts with 0 ❤️)
+- **Daily Reset**: Hearts reset to 3 at midnight
+
+### Question Bank
+- **Total**: 80 questions
+  - Listening: 20 questions (10 easy, 5 medium, 5 hard)
+  - Reading: 20 questions (10 easy, 5 medium, 5 hard)
+  - Writing: 20 questions (not used in quiz)
+  - Speaking: 20 questions (not used in quiz)
+- **Selection**: Random with replacement (questions can repeat)
+
+### Text-to-Speech (TTS)
+- Uses browser's Web Speech API
+- Language: German (de-DE)
+- Requires browser support (Chrome/Edge recommended)
+- Fallback: Shows error message if TTS unavailable
+
 ## 📊 Progress System
 
 Progress is saved to browser with key `german-progress`:
@@ -97,8 +143,17 @@ Progress is saved to browser with key `german-progress`:
 ```json
 {
   "days": {
-    "1": { "unlocked": true, "completed": false, "sessions": { ... } },
-    "2": { "unlocked": false, "completed": false, "sessions": { ... } }
+    "1": {
+      "unlocked": true,
+      "completed": false,
+      "sessions": {
+        "hoeren": { "completed": false, "attempts": 0, "lastAttemptAt": null },
+        "lesen": { "completed": false, "attempts": 0, "lastAttemptAt": null }
+      },
+      "hearts": 3,
+      "heartsResetAt": "2026-02-16T00:00:00Z",
+      "tomorrowHeartsUsed": false
+    }
   },
   "streak": 5,
   "lastCompletedDate": "2026-02-16"
@@ -160,17 +215,28 @@ npm start
 de-learn-de/
 ├── src/
 │   ├── app/
-│   │   ├── page.tsx          # Main dashboard
+│   │   ├── page.tsx                # Main dashboard
+│   │   ├── layout.tsx              # Root layout
 │   │   ├── context/
-│   │   │   └── ProgressContext.tsx  # Progress logic
+│   │   │   └── ProgressContext.tsx # Progress & hearts logic
 │   │   ├── day/
-│   │   │   └── [id]/page.tsx       # Daily material
+│   │   │   └── [id]/
+│   │   │       ├── page.tsx        # Daily sessions (Hören/Lesen)
+│   │   │       └── quiz/
+│   │   │           └── page.tsx    # Quiz interface
 │   │   ├── components/
-│   │   │   └── BottomNav.tsx       # Bottom nav
-│   │   └── globals.css        # Theme colors
-│   └── data/
-│       └── questions.json     # Bank soal 80 pertanyaan
-├── Dockerfile                # Container config
+│   │   │   ├── BottomNav.tsx       # Bottom navigation
+│   │   │   ├── HeartsIndicator.tsx # Hearts display
+│   │   │   ├── QuizCard.tsx        # Question card
+│   │   │   └── TTSAudio.tsx        # Text-to-speech button
+│   │   └── globals.css             # Theme colors
+│   ├── components/                 # Shared components
+│   ├── data/
+│   │   ├── questions.json          # Question bank (80 questions)
+│   │   └── questions.ts            # Types & quiz utilities
+│   └── lib/
+│       └── quiz.ts                 # Quiz logic functions
+├── Dockerfile                      # Container config
 ├── package.json
 └── README.md
 ```
@@ -189,6 +255,21 @@ docker run -p 3000:3000 de-learn-de
 ## 📄 License
 
 MIT License - Free to use
+
+---
+
+## 📝 TODO / Future Development
+
+- [ ] **Expand Question Bank**: Add 50+ questions per category per difficulty level
+- [ ] **Audio Files**: Replace TTS with high-quality static audio files
+- [ ] **No Replacement**: Track question history to avoid repetition
+- [ ] **Animations**: Add sound effects and smooth animations for quiz interactions
+- [ ] **Timer**: Add time limit per question or per session
+- [ ] **Hint System**: Add hints for difficult questions (costs 0.5 ❤️)
+- [ ] **Leaderboard**: Compare progress with other learners
+- [ ] **Offline Mode**: PWA support for learning without internet
+- [ ] **Dark Mode**: German flag inspired dark theme
+- [ ] **Export Progress**: Download progress as PDF/certificate
 
 ---
 

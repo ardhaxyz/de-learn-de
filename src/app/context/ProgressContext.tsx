@@ -2,17 +2,25 @@
 
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 
+// Session types - only 2 sessions now
+export type SessionType = 'hoeren' | 'lesen';
+
 interface SessionProgress {
-  hoeren: boolean;
-  lesen: boolean;
-  schreiben: boolean;
-  sprechen: boolean;
+  completed: boolean;
+  attempts: number;
+  lastAttemptAt: string | null;
 }
 
 interface DayData {
   completed: boolean;
   unlocked: boolean;
-  sessions: SessionProgress;
+  sessions: {
+    hoeren: SessionProgress;
+    lesen: SessionProgress;
+  };
+  hearts: number;                    // 0-3 hearts per day
+  heartsResetAt: string;             // ISO date string
+  tomorrowHeartsUsed: boolean;       // Track if used tomorrow's hearts
 }
 
 interface Progress {
@@ -23,18 +31,35 @@ interface Progress {
 
 interface ProgressContextType {
   progress: Progress;
-  updateSession: (day: number, session: keyof SessionProgress, completed: boolean) => void;
+  attemptQuiz: (day: number, session: SessionType, passed: boolean) => boolean;
+  consumeTomorrowHearts: (day: number) => boolean;
   unlockDay: (day: number) => void;
   getStreak: () => number;
+  getHearts: (day: number) => number;
+  canUseTomorrowHearts: (day: number) => boolean;
+  shouldResetHearts: (dayData: DayData) => boolean;
 }
 
 const ProgressContext = createContext<ProgressContextType | undefined>(undefined);
 
 const STORAGE_KEY = 'german-progress';
+const MAX_HEARTS = 3;
+
+const createDefaultSessions = (): { hoeren: SessionProgress; lesen: SessionProgress } => ({
+  hoeren: { completed: false, attempts: 0, lastAttemptAt: null },
+  lesen: { completed: false, attempts: 0, lastAttemptAt: null }
+});
 
 const INITIAL_PROGRESS: Progress = {
   days: {
-    1: { unlocked: true, completed: false, sessions: { hoeren: false, lesen: false, schreiben: false, sprechen: false } }
+    1: { 
+      unlocked: true, 
+      completed: false, 
+      sessions: createDefaultSessions(),
+      hearts: MAX_HEARTS,
+      heartsResetAt: new Date().toISOString(),
+      tomorrowHeartsUsed: false
+    }
   },
   streak: 0,
   lastCompletedDate: null,
@@ -61,8 +86,18 @@ function setStoredProgress(progress: Progress): void {
   }
 }
 
+// Check if it's a new day (for hearts reset)
+function isNewDay(lastResetDate: string): boolean {
+  const lastReset = new Date(lastResetDate);
+  const now = new Date();
+  return (
+    lastReset.getDate() !== now.getDate() ||
+    lastReset.getMonth() !== now.getMonth() ||
+    lastReset.getFullYear() !== now.getFullYear()
+  );
+}
+
 export const ProgressProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // Use state to track progress, initialized with default
   const [progress, setProgress] = useState<Progress>(INITIAL_PROGRESS);
   const [isMounted, setIsMounted] = useState(false);
 
@@ -80,22 +115,81 @@ export const ProgressProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     }
   }, [progress, isMounted]);
 
-  const updateSession = useCallback((day: number, session: keyof SessionProgress, completed: boolean) => {
+  // Check if hearts should be reset for a day
+  const shouldResetHearts = useCallback((dayData: DayData): boolean => {
+    return isNewDay(dayData.heartsResetAt);
+  }, []);
+
+  // Get current hearts for a day (with auto-reset)
+  const getHearts = useCallback((day: number): number => {
+    const dayData = progress.days[day];
+    if (!dayData) return MAX_HEARTS;
+    
+    if (shouldResetHearts(dayData)) {
+      return MAX_HEARTS;
+    }
+    return dayData.hearts;
+  }, [progress.days, shouldResetHearts]);
+
+  // Attempt a quiz - consumes 1 heart if failed
+  const attemptQuiz = useCallback((day: number, session: SessionType, passed: boolean): boolean => {
+    let success = false;
+    
     setProgress(prev => {
-      const dayData = prev.days[day] || { unlocked: false, completed: false, sessions: { hoeren: false, lesen: false, schreiben: false, sprechen: false } };
-      const newSessions = { ...dayData.sessions, [session]: completed };
-      
-      const isDayCompleted = Object.values(newSessions).every(s => s === true);
-      
+      const dayData = prev.days[day] || { 
+        unlocked: day === 1, 
+        completed: false, 
+        sessions: createDefaultSessions(),
+        hearts: MAX_HEARTS,
+        heartsResetAt: new Date().toISOString(),
+        tomorrowHeartsUsed: false
+      };
+
+      // Check if hearts need reset
+      let currentHearts = dayData.hearts;
+      let heartsResetAt = dayData.heartsResetAt;
+      if (isNewDay(dayData.heartsResetAt)) {
+        currentHearts = MAX_HEARTS;
+        heartsResetAt = new Date().toISOString();
+      }
+
+      // Check if can attempt
+      if (currentHearts <= 0) {
+        return prev; // Cannot attempt
+      }
+
+      // Update session progress
+      const newSessions = { ...dayData.sessions };
+      newSessions[session] = {
+        completed: passed || dayData.sessions[session].completed,
+        attempts: dayData.sessions[session].attempts + 1,
+        lastAttemptAt: new Date().toISOString()
+      };
+
+      // Deduct heart if failed
+      let newHearts = currentHearts;
+      if (!passed) {
+        newHearts = Math.max(0, currentHearts - 1);
+      }
+
+      // Check if day is completed (both sessions passed)
+      const isDayCompleted = newSessions.hoeren.completed && newSessions.lesen.completed;
+
       const newProgress = {
         ...prev,
         days: {
           ...prev.days,
-          [day]: { ...dayData, sessions: newSessions, completed: isDayCompleted }
+          [day]: {
+            ...dayData,
+            sessions: newSessions,
+            completed: isDayCompleted,
+            hearts: newHearts,
+            heartsResetAt
+          }
         }
       };
 
-      // Handle streak if day just completed
+      // Handle streak and unlock next day
       if (isDayCompleted && !dayData.completed) {
         const today = new Date().toISOString().split('T')[0];
         if (prev.lastCompletedDate !== today) {
@@ -109,15 +203,76 @@ export const ProgressProvider: React.FC<{ children: React.ReactNode }> = ({ chil
           newProgress.days[nextDay] = { 
             unlocked: true, 
             completed: false, 
-            sessions: { hoeren: false, lesen: false, schreiben: false, sprechen: false } 
+            sessions: createDefaultSessions(),
+            hearts: MAX_HEARTS,
+            heartsResetAt: new Date().toISOString(),
+            tomorrowHeartsUsed: false
           };
         } else {
           newProgress.days[nextDay].unlocked = true;
         }
       }
 
+      success = true;
       return newProgress;
     });
+
+    return success;
+  }, []);
+
+  // Check if can use tomorrow's hearts
+  const canUseTomorrowHearts = useCallback((day: number): boolean => {
+    const dayData = progress.days[day];
+    if (!dayData) return false;
+    
+    // Can't use if already used
+    if (dayData.tomorrowHeartsUsed) return false;
+    
+    // Check if there's a next day
+    const nextDay = day + 1;
+    if (nextDay > 14) return false; // Max 14 days
+    
+    return true;
+  }, [progress.days]);
+
+  // Use tomorrow's hearts
+  const consumeTomorrowHearts = useCallback((day: number): boolean => {
+    let success = false;
+    
+    setProgress(prev => {
+      const dayData = prev.days[day];
+      if (!dayData) return prev;
+      
+      if (dayData.tomorrowHeartsUsed) return prev;
+      
+      const nextDay = day + 1;
+      const nextDayData = prev.days[nextDay];
+      
+      // If next day exists and has hearts, deduct from it
+      if (nextDayData && nextDayData.hearts > 0) {
+        const newProgress = {
+          ...prev,
+          days: {
+            ...prev.days,
+            [day]: {
+              ...dayData,
+              hearts: MAX_HEARTS,
+              tomorrowHeartsUsed: true
+            },
+            [nextDay]: {
+              ...nextDayData,
+              hearts: Math.max(0, nextDayData.hearts - MAX_HEARTS)
+            }
+          }
+        };
+        success = true;
+        return newProgress;
+      }
+      
+      return prev;
+    });
+    
+    return success;
   }, []);
 
   const unlockDay = useCallback((day: number) => {
@@ -127,7 +282,14 @@ export const ProgressProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         ...prev.days,
         [day]: prev.days[day] 
           ? { ...prev.days[day], unlocked: true } 
-          : { unlocked: true, completed: false, sessions: { hoeren: false, lesen: false, schreiben: false, sprechen: false } }
+          : { 
+              unlocked: true, 
+              completed: false, 
+              sessions: createDefaultSessions(),
+              hearts: MAX_HEARTS,
+              heartsResetAt: new Date().toISOString(),
+              tomorrowHeartsUsed: false
+            }
       }
     }));
   }, []);
@@ -135,7 +297,16 @@ export const ProgressProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const getStreak = useCallback(() => progress.streak, [progress.streak]);
 
   return (
-    <ProgressContext.Provider value={{ progress, updateSession, unlockDay, getStreak }}>
+    <ProgressContext.Provider value={{ 
+      progress, 
+      attemptQuiz, 
+    consumeTomorrowHearts,
+    unlockDay,
+      getStreak,
+      getHearts,
+      canUseTomorrowHearts,
+      shouldResetHearts
+    }}>
       {children}
     </ProgressContext.Provider>
   );
