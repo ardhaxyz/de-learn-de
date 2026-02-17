@@ -15,7 +15,7 @@ export default function QuizPage() {
   const dayNum = parseInt(id as string);
   const category = searchParams.get("category") as "hoeren" | "lesen" | null;
   
-  const { attemptQuiz, getHearts } = useProgress();
+  const { attemptQuiz, getHearts, progress } = useProgress();
   
   const [quizSession, setQuizSession] = useState<QuizSession | null>(null);
   const [quizResult, setQuizResult] = useState<QuizResult | null>(null);
@@ -121,8 +121,14 @@ export default function QuizPage() {
   // Result View
   if (showResult && quizResult) {
     const passed = quizResult.passed;
-    const isLastSession = category === "lesen";
-    const nextSession = !isLastSession && passed ? "lesen" : null;
+    
+    // Check if both sessions are completed after this one
+    const dayData = progress.days[dayNum];
+    const otherSessionCompleted = category === "hoeren" 
+      ? dayData?.sessions.lesen.completed 
+      : dayData?.sessions.hoeren.completed;
+    const allSessionsCompleted = passed && otherSessionCompleted;
+    const hasOtherSessionIncomplete = passed && !otherSessionCompleted;
 
     return (
       <div className="min-h-screen bg-de-gray flex flex-col">
@@ -170,7 +176,10 @@ export default function QuizPage() {
             <div className={`p-4 rounded-xl mb-6 ${passed ? "bg-green-50 text-green-800" : "bg-red-50 text-red-800"}`}>
               {passed ? (
                 <p className="font-medium">
-                  Selamat! Anda telah menyelesaikan sesi ini. {nextSession && "Lanjutkan ke sesi berikutnya!"}
+                  {hasOtherSessionIncomplete 
+                    ? "Selamat! Sesi ini selesai. Kerjakan sesi lainnya untuk melanjutkan."
+                    : "Selamat! Semua sesi hari ini selesai!"
+                  }
                 </p>
               ) : (
                 <>
@@ -187,23 +196,25 @@ export default function QuizPage() {
             {/* Action Buttons */}
             <div className="space-y-3">
               {passed ? (
-                nextSession ? (
+                hasOtherSessionIncomplete ? (
+                  // If passed but other session not done yet, go back to day page
                   <button
-                    onClick={() => router.push(`/day/${dayNum}/quiz?category=${nextSession}`)}
+                    onClick={() => router.push(`/day/${dayNum}`)}
                     className="w-full bg-de-black text-white py-4 rounded-xl font-black flex items-center justify-center gap-2 hover:bg-gray-800 transition-colors"
                   >
-                    Lanjut ke {nextSession === "lesen" ? "Lesen" : "Hören"}
+                    Kembali ke Day Page
                     <ChevronRight size={20} />
                   </button>
-                ) : (
+                ) : allSessionsCompleted ? (
+                  // If all sessions done, go to home
                   <button
-                    onClick={() => router.push(`/day/${dayNum + 1}`)}
+                    onClick={() => router.push('/')}
                     className="w-full bg-green-500 text-white py-4 rounded-xl font-black flex items-center justify-center gap-2 hover:bg-green-600 transition-colors"
                   >
                     Hari Selesai! 🎉
                     <ChevronRight size={20} />
                   </button>
-                )
+                ) : null
               ) : (
                 <>
                   <button

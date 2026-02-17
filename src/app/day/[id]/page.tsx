@@ -80,9 +80,8 @@ export default function DayPage() {
     }
   };
 
-  // Check if previous session is completed (for unlocking)
-  const isHoerenCompleted = dayData.sessions.hoeren.completed;
-  const isLesenLocked = !isHoerenCompleted;
+  // Both sessions are always available (no locking between sessions)
+  // Only day-level locking applies
 
   return (
     <div className="min-h-screen bg-de-gray flex flex-col">
@@ -168,27 +167,24 @@ export default function DayPage() {
 
         {/* Sessions */}
         <div className="grid grid-cols-1 gap-4">
-          {SESSIONS.map((session, index) => {
+          {SESSIONS.map((session) => {
             const isCompleted = dayData.sessions[session.id].completed;
-            const isLocked = index === 1 && isLesenLocked; // Lesen locked until Hoeren done
-            const canStart = hearts > 0 && !isLocked;
+            const canStart = hearts > 0;
             const Icon = session.icon;
 
             return (
               <div
                 key={session.id}
-                className={`flex items-center p-5 rounded-2xl border-2 transition-all relative overflow-hidden ${
+                className={`flex items-center p-5 rounded-2xl border-2 transition-all relative overflow-hidden group ${
                   isCompleted 
                     ? "bg-white border-green-500/30" 
-                    : isLocked
-                      ? "bg-gray-50 border-gray-200 opacity-60"
-                      : canStart
-                        ? "bg-white border-de-gray hover:border-de-red/30 cursor-pointer"
-                        : "bg-gray-50 border-gray-200 opacity-60"
+                    : canStart
+                      ? "bg-white border-de-gray hover:border-de-red/30 cursor-pointer"
+                      : "bg-gray-50 border-gray-200 opacity-60"
                 }`}
                 onClick={() => canStart && handleStartQuiz(session.id)}
               >
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center text-white ${session.color} shadow-lg transition-transform ${canStart ? 'group-hover:scale-110' : ''}`}>
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center text-white ${session.color} shadow-lg transition-transform group-hover:scale-110`}>
                   <Icon size={28} />
                 </div>
                 
@@ -204,12 +200,10 @@ export default function DayPage() {
                 </div>
 
                 <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${
-                  isCompleted ? "bg-green-500 text-white" : isLocked ? "bg-gray-200 text-gray-400" : "bg-gray-100 text-gray-300"
+                  isCompleted ? "bg-green-500 text-white" : "bg-gray-100 text-gray-300"
                 }`}>
                   {isCompleted ? (
                     <CheckCircle2 size={24} strokeWidth={3} />
-                  ) : isLocked ? (
-                    <span className="text-lg">🔒</span>
                   ) : hearts === 0 ? (
                     <Heart size={20} className="text-red-300" />
                   ) : (
